@@ -1,0 +1,724 @@
+{% extends "master.html" %}
+{% load static %}
+{% block body_class %}photogallery{% endblock %}
+
+{% block title %}
+  Stellar Gallery
+{% endblock %}
+
+{% block link %}
+  <link rel="stylesheet" href="{% static 'css/stellar_gallery.css' %}">
+{% endblock %}
+
+{% block style %}
+{% endblock %}
+
+{% block content %}
+
+<!-- Header -->
+<div class="gallery_header">
+  <h1 style="font-size:40px;">Stellar Photo Gallery</h1>
+  <p style="font-size:12px;color:white;text-shadow:none;font-family:arial;">
+  (click the image to see the full picture)</p>
+  <p style="font-size:12px;color:white;text-shadow:none;font-family:arial;">(hover over image to learn a little something)</p>
+</div>
+<!-- Photo Grid -->
+<div class="photo-grid">
+<!-- Column One -->
+  <div class="grid-col">
+
+    <div class="gallery-item image-tooltip">
+      <a href="{% static 'images/proto_star_hh34.jpg' %}" target="_blank">
+        <img class="tooltip1" src="{% static 'images/proto_star_hh34.jpg' %}">
+      </a>
+       <!-- Tooltip text -->
+        <span class="tooltip-text">
+        The star is in its earliest stage of formation. It's a Herbig–Haro (HH) object.
+        Their existence is brief in cosmic terms (1000's of years).
+        </span>
+      <div class="desc">Evolutionary Protostar<br>HH 34<br>(ESA/Hubble)</div>
+    </div>
+
+    <div class="gallery-item image-tooltip">
+      <a href="{% static 'images/O-type.webp' %}" target="_blank">
+        <img src="{% static 'images/O-type.webp' %}">
+      </a>
+        <span class="tooltip-text">
+        These spiral galaxies are forever colliding. They house many lovely Type O Stars.
+        They also sport Tidal Tails and engage in Starburst Activities.
+        </span>
+      <div class="desc">Antennae Galaxies<br>(NGC 4038 and NGC 4039)<br>(ESA/Hubble)</div>
+    </div>
+
+    <div class="gallery-item image-tooltip">
+      <a href="{% static 'images/white _dwarf _Stein_ 2051B.jpg' %}" target="_blank">
+        <img src="{% static 'images/white _dwarf _Stein_ 2051B.jpg' %}">
+      </a>
+        <span class="tooltip-text">
+        Stein 2051 is relatively close to Earth, only 17 light-years away.
+        Its tiny companion is a bit farther, 5000 light-years away.
+        </span>
+      <div class="desc">White Dwarf<br>Stein 2051<br>(Hubble Archives)</div>
+    </div>
+
+    <div class="gallery-item image-tooltip">
+      <a href="{% static 'images/o_type_carina_hubble.jpg' %}" target="_blank">
+        <img src="{% static 'images/o_type_carina_hubble.jpg' %}">
+      </a>
+        <span class="tooltip-text">
+        A.K.A. NGC 3372, is the home of Trumpler 14 and Trumpler 16. The Trumplers
+        are open, young clusters. These clusters contain many extraordinarily
+        hot, massive O-type stars.
+        </span>
+      <div class="desc">O-Type Stars<br>Carina Nebula<br>(ESA/Hubble)</div>
+    </div>
+
+    <div class="gallery-item image-tooltip">
+      <a href="{% static 'images/b_type_nebula_hubble.webp' %}" target="_blank">
+        <img src="{% static 'images/b_type_nebula_hubble.webp' %}">
+      </a>
+        <span class="tooltip-text">
+        It's located in the Small Magellanic Cloud (SMC). It boasts a whopping
+        2,500 newborn and infant stars. Bragging rights extend to her beautiful,
+        bright, blue massive stars as well.
+        </span>
+      <div class="desc">B-Type Stars<br>NGC 346 Nebula<br>(ESA/Hubble)</div>
+    </div>
+
+    <div class="gallery-item image-tooltip">
+      <a href="{% static 'images/b_type_holiday_globe_hubble.webp' %}" target="_blank">
+        <img src="{% static 'images/b_type_holiday_globe_hubble.webp' %}">
+      </a>
+        <span class="tooltip-text">
+        This billion star galaxy (UGC 8091) is considered an "irregular galaxy".
+        It's a dwarf galaxy about 7 million light-years from Earth. It appears
+        as a tangle of string lights instead of an elliptical or spiral shape.
+        </span>
+      <div class="desc">B-Type Stars<br>Hubble Globe of Stars<br>(ESA/Hubble)</div>
+    </div>
+
+    <div class="gallery-item image-tooltip">
+      <a href="{% static 'images/b_type_earendel_jwst.webp' %}" target="_blank">
+        <img src="{% static 'images/b_type_earendel_jwst.webp' %}">
+      </a>
+        <span class="tooltip-text">
+        A.K.A WHL0137-LS is a star, or star cluster found in the constellation of Cetus. It's 28 billion
+        light-years (8.6 billion parsecs) away. If it is a single star, it's the farthest known star.
+        </span>
+      <div class="desc">B-Type Star<br>Earendel<br>(ESA/WEBB)</div>
+    </div>
+
+    <div class="gallery-item image-tooltip">
+      <a href="{% static 'images/b_type_glittering_cluster_hubble.webp' %}" target="_blank">
+        <img src="{% static 'images/b_type_glittering_cluster_hubble.webp' %}">
+      </a>
+        <span class="tooltip-text">
+        Messier 72 is a  collection of stars located in the Aquarius Constellation.
+        It's about 50,000 light-years from Earth.
+        </span>
+      <div class="desc">B-Type Stars<br>Glittering Cluster<br>(ESA/Hubble)</div>
+    </div>
+
+    <div class="gallery-item image-tooltip">
+      <a href="{% static 'images/young_stellar_object_tauri.jpg' %}" target="_blank">
+        <img src="{% static 'images/young_stellar_object_tauri.jpg' %}">
+      </a>
+        <span class="tooltip-text">
+        This youngling is growing up in the constellation Taurus.
+        It's located 450 light years from Earth.
+        </span>
+      <div class="desc">Young Stellar Object<br>LDN 1551, XZ Tauri<br>(ESA/Hubble)</div>
+    </div>
+
+    <div class="gallery-item image-tooltip">
+      <a href="{% static 'images/globular_cluster_terzan4.jpg' %}" target="_blank">
+        <img class="tooltip1" src="{% static 'images/globular_cluster_terzan4.jpg' %}">
+      </a>
+        <span class="tooltip-text">
+        Stars that are  bound by their gravitational attraction are called globular clusters.
+        Terzan 4's heart is a dense and packed field of stars.
+        </span>
+      <div class="desc">Globular Cluster<br>Terzan 4<br>(ESA/Hubble)</div>
+    </div>
+
+    <div class="gallery-item image-tooltip">
+      <a href="{% static 'images/supernova_sn1987a.jpg' %}" target="_blank">
+        <img class="tooltip1" src="{% static 'images/supernova_sn1987a.jpg' %}">
+      </a>
+        <span class="tooltip-text">
+        This dying star gifted us with a brilliant stellar explosion. It leaves
+        behind a  neutron star or black hole (stellar remnant).
+        </span>
+      <div class="desc">Supernova<br>SN 1987A<br>(ESA/Hubble Archives)</div>
+    </div>
+
+    <div class="gallery-item image-tooltip">
+      <a href="{% static 'images/illustration_red_dwarf.jpg' %}" target="_blank">
+        <img class="tooltip1" src="{% static 'images/illustration_red_dwarf.jpg' %}">
+      </a>
+        <span class="tooltip-text">
+        The artist conveys the violence of a red dwarf stripping away an orbitting planet's atmosphere.
+        </span>
+      <div class="desc">Young Red Dwarf<br>Artist's Illustration<br>(ESA/Nasa)</div>
+    </div>
+
+    <div class="gallery-item image-tooltip">
+      <a href="{% static 'images/heic1608a.jpg' %}" target="_blank">
+        <img class="tooltip1" src="{% static 'images/heic1608a.jpg' %}">
+      </a>
+        <span class="tooltip-text">
+        This beauty is located about 8,000 light-years from Earth in the Cassiopeia Constellation.
+        Stellar winds from a huge, hot, youngster create the "bubble".
+        </span>
+      <div class="desc">Bubble Nebula<br>NGC 7635<br>(ESA/Hubble/STScI)</div>
+    </div>
+
+    <div class="gallery-item image-tooltip" style="margin-bottom:40px;">
+      <a href="{% static 'images/spirograph_nebula.jpg' %}" target="_blank">
+        <img class="tooltip1" src="{% static 'images/spirograph_nebula.jpg' %}">
+      </a>
+        <span class="tooltip-text">
+        The nebula is about 2000 light-years from Earth. It reside in the Lepus
+        Constellation.
+        </span>
+      <div class="desc">Spirograph Nebula<br>IC 418, IRAS 05251-1244<br>(ESA/Hubble)</div>
+    </div>
+
+    <div class="gallery-item image-tooltip">
+      <a href="{% static 'images/vycanismajoris.png' %}" target="_blank">
+        <img src="{% static 'images/vycanismajoris.png' %}">
+      </a>
+        <span class="tooltip-text">
+        This red hypergiant is nearing the end of its life. It's expected to end
+        in a supernova. It's one of the largest known stars by radius.
+        </span>
+      <div class="desc">Variable Star<br>VY Canis Majoris<br>(ESA/Hubble)</div>
+    </div>
+
+  </div>
+
+<!-- Column Two -->
+  <div class="grid-col">
+
+    <div class="gallery-item image-tooltip">
+      <a href="{% static 'images/b_type_starburst_hubble.webp' %}" target="_blank">
+        <img src="{% static 'images/b_type_starburst_hubble.webp' %}">
+      </a>
+        <span class="tooltip-text">
+        These regions have birth rates at 10 to 100 times the normal rate.
+        </span>
+      <div class="desc">B-Type Stars<br>Starburst Region<br>(ESA/Hubble)</div>
+    </div>
+
+    <div class="gallery-item image-tooltip">
+      <a href="{% static 'images/b_type_ngc346_hubble-star-formation.webp' %}" target="_blank">
+        <img src="{% static 'images/b_type_ngc346_hubble-star-formation.webp' %}">
+      </a>
+        <span class="tooltip-text">
+        A.K.A. Stellar Nursery. It has dense, cold clouds of cosmic dust and molecular hydrogen gas.
+        Gravity causes all this material to collapse and form Protostars.
+        </span>
+      <div class="desc">B-Type Stars<br>Star Formation Region<br>(ESA/Hubble)</div>
+    </div>
+
+    <div class="gallery-item image-tooltip">
+      <a href="{% static 'images/a_type_tarantula_nebula_hubble.jpg' %}" target="_blank">
+        <img src="{% static 'images/a_type_tarantula_nebula_hubble.jpg' %}">
+      </a>
+        <span class="tooltip-text">
+        It resides in the Dorado Constellation. It boasts the brightest and largest
+        star-forming region in our space "neighborhood". The hottest and most massive
+        stars ever found reside in this nebula.
+        </span>
+      <div class="desc">A-Type Stars<br>Tarantula Nebula<br>(ESA/Hubble)</div>
+    </div>
+
+    <div class="gallery-item image-tooltip">
+      <a href="{% static 'images/f_type_polaris.jpg' %}" target="_blank">
+        <img src="{% static 'images/f_type_polaris.jpg' %}">
+      </a>
+        <span class="tooltip-text">
+        "The North Star" is a multiple star system. Polaris A is the supergiant. She
+         has a small sister, the dwarf star Polaris B. The middle-child is Polaris Ab and
+         she's forver in big A's orbit and shy.
+        </span>
+      <div class="desc">F-Type Star<br>Polaris A (B too)<br>(ESA/Hubble)</div>
+    </div>
+
+    <div class="gallery-item image-tooltip">
+      <a href="{% static 'images/f_type_tabbys_star.jpg' %}" target="_blank">
+        <img src="{% static 'images/f_type_tabbys_star.jpg' %}">
+      </a>
+        <span class="tooltip-text">
+        This lovely illustration features a hot, white or yellow-white star. They
+        account for 3% of the stars in our galaxy.
+        </span>
+      <div class="desc">F-Type Star<br>Tabby's Star (Nasa Illustration)</div>
+    </div>
+
+    <div class="gallery-item image-tooltip">
+      <a href="{% static 'images/g_type_sun.jpg' %}" target="_blank">
+        <img src="{% static 'images/g_type_sun.jpg' %}">
+      </a>
+        <span class="tooltip-text">
+        Our star lies in  the center of the Solar System. It formed around 5 billion years ago.
+        It's a G-type main-sequence star (G2V).
+        </span>
+      <div class="desc">G-Type Star<br>The Sun<br>(ESA/Hubble)</div>
+    </div>
+
+    <div class="gallery-item image-tooltip">
+      <a href="{% static 'images/k_type_epsilon_eridani.jpg' %}" target="_blank">
+        <img src="{% static 'images/k_type_epsilon_eridani.jpg' %}">
+      </a>
+        <span class="tooltip-text">
+        A.K.A. Ran, is an orange dwarf star. It resides in the constellation
+        Eridanus and is only 10.5 light-years from Earth. It's visible to the
+        naked eye and around 800 million years old.
+        </span>
+      <div class="desc">K-Type Star<br>Epsilon Eridani<br>(ESA/Hubble)</div>
+    </div>
+
+    <div class="gallery-item image-tooltip">
+      <a href="{% static 'images/brown_dwarves.jpg' %}" target="_blank">
+        <img src="{% static 'images/brown_dwarves.jpg' %}">
+      </a>
+        <span class="tooltip-text">
+        12 Images stacked over 3 years to give us the waltz of two brown dwarfs.
+        </span>
+      <div class="desc">Brown Dwarfs (Waltzing)<br>Luhman 16A, 16AB, & 16B<br>(ESA/Hubble)</div>
+    </div>
+
+    <div class="gallery-item image-tooltip">
+      <a href="{% static 'images/quasar.jpg' %}" target="_blank">
+        <img src="{% static 'images/quasar.jpg' %}">
+      </a>
+        <span class="tooltip-text">
+        Unlike other quasars, J0742+2704 retains clear spiral arms. It resides in an
+        intact spiral galaxy with a central massive black hole. Newborn radio jets have
+        made their appearance.
+        </span>
+      <div class="desc">Gemini Constellation<br>Quasar J0742+2704 (center)<br>(ESA/Hubble)</div>
+    </div>
+
+    <div class="gallery-item image-tooltip">
+      <a href="{% static 'images/carbon_star_cwleonis.jpg' %}" target="_blank">
+        <img src="{% static 'images/carbon_star_cwleonis.jpg' %}">
+      </a>
+        <span class="tooltip-text">
+        CW Leonis resides in the constellation Leo, around 400 light-years from Earth.<br>
+        It's a bright red giant boasting a carbon-rich atmosphere.
+        </span>
+      <div class="desc">Carbon Star<br>CW Leonis<br>(ESA/Hubble)</div>
+    </div>
+
+    <div class="gallery-item image-tooltip">
+      <a href="{% static 'images/supernova_remnant_sn1987a.jpg' %}" target="_blank">
+        <img class="tooltip1" src="{% static 'images/supernova_remnant_sn1987a.jpg' %}">
+      </a>
+        <span class="tooltip-text">
+        The remnant is located at the center of the image. The image was captured
+        using the  Wide Field Camera 3 (WFC3).
+        </span>
+      <div class="desc">Supernova Remnant<br>SN 1987A<br>(ESA/Hubble)</div>
+    </div>
+
+    <div class="gallery-item image-tooltip">
+      <a href="{% static 'images/disk_beta_pictoris.jpg' %}" target="_blank">
+        <img class="tooltip1" src="{% static 'images/disk_beta_pictoris.jpg' %}">
+      </a>
+        <span class="tooltip-text">
+        Beta Pictoris is a 20 million year old star. It's surrounded by a gas & dust disc.
+        </span>
+      <div class="desc">Stellar Debris Disc<br>Beta Pictoris<br>(ESA/Hubble)</div>
+    </div>
+
+    <div class="gallery-item image-tooltip">
+      <a href="{% static 'images/wikiimages-stars.jpg' %}" target="_blank">
+        <img class="tooltip1" src="{% static 'images/wikiimages-stars.jpg' %}">
+      </a>
+        <span class="tooltip-text">
+        I don't have any information about this stellar photo. I liked it and
+        it matched my theme. I hope you like it too.
+        </span>
+      <div class="desc">Galaxy of Stars<br>Pretty Orange Galaxy<br>(Wiki Images)</div>
+    </div>
+
+    <div class="gallery-item image-tooltip" style="margin-bottom:40px;">
+      <a href="{% static 'images/afgl5180.jpg' %}" target="_blank">
+        <img class="tooltip1" src="{% static 'images/afgl5180.jpg' %}">
+      </a>
+        <span class="tooltip-text">
+        It's located in the "The Twins", the constellation of Gemini. A massive
+        star is forming in the center and using its jets to blast cavities through
+        the dust clouds.
+        </span>
+      <div class="desc">Stellar Nursery<br>AFGL 5180<br>(ESA/Hubble/Nasa)</div>
+    </div>
+
+    <div class="gallery-item image-tooltip">
+      <a href="{% static 'images/planetary_nebula.jpg' %}" target="_blank">
+        <img src="{% static 'images/planetary_nebula.jpg' %}">
+      </a>
+        <span class="tooltip-text">
+        Kohoutek resides 4600 light-years away in the constellation Cygnus (the Swan).
+        This image was the final work of the Wide Field and Planetary Camera 2 (WFPC2).
+        </span>
+      <div class="desc">Planetary Nebula<br>Kohoutek 4-55<br>(ESA/Hubble)</div>
+    </div>
+
+  </div>
+
+<!-- Column Three -->
+  <div class="grid-col">
+
+    <div class="gallery-item image-tooltip">
+      <a href="{% static 'images/m_type_antares.webp' %}" target="_blank">
+        <img src="{% static 'images/m_type_antares.webp' %}">
+      </a>
+        <span class="tooltip-text">
+        A.K.A. the "Heart of the Scorpion", is a massive red supergiant. It's the
+        primary in a binary system located in the Scorpius Constellation.
+        It's the brightest star in Scorpius.
+        </span>
+      <div class="desc">M-Type Star<br>Antares A<br>(ESO)</div>
+    </div>
+
+    <div class="gallery-item image-tooltip">
+      <a href="{% static 'images/m_type_antares-region-cooled.webp' %}" target="_blank">
+        <img src="{% static 'images/m_type_antares-region-cooled.webp' %}">
+      </a>
+        <span class="tooltip-text">
+        Its heart is Antares (Alpha Scorpii).This enormous M-Type red supergiant
+        has a cool surface temperature of 3,500 Kelvin, or about.
+        </span>
+      <div class="desc">M-Type Stars<br>Antares Region<br>(ESA/Hubble)</div>
+    </div>
+
+    <div class="gallery-item image-tooltip">
+      <a href="{% static 'images/m_type_betelgeuse.jpg' %}" target="_blank">
+        <img src="{% static 'images/m_type_betelgeuse.jpg' %}">
+      </a>
+        <span class="tooltip-text">
+        Betelgeuse is experiencing the "Great Dimming". B's burned through their fuel
+        and is nearing the end of their life. They're not alone. Siwarha, A.K.A. Beetle Buddy,
+        is always circling and providing companionship.
+        </span>
+      <div class="desc">M-Type Star<br>Betelgeuse(Red Supergiant)<br>(ESA/Hubble)</div>
+    </div>
+
+    <div class="gallery-item image-tooltip">
+      <a href="{% static 'images/crab_pulsar.jpg' %}" target="_blank">
+        <img src="{% static 'images/crab_pulsar.jpg' %}">
+      </a>
+        <span class="tooltip-text">
+        A neutron star that spins about 30 times every second. In 1054 a supernova
+        explosion was recorded by astronomers. This is its leftover core.
+        </span>
+      <div class="desc">Crab Pulsar<br>Center of Crab Nebula<br>(ESA/Hubble)</div>
+    </div>
+
+    <div class="gallery-item image-tooltip">
+      <a href="{% static 'images/highest-energy-pulsars_vela.jpg' %}" target="_blank">
+        <img src="{% static 'images/highest-energy-pulsars_vela.jpg' %}">
+      </a>
+        <span class="tooltip-text">
+        Vela (a.k.a. PSR B0833–45) is a radio, optical, X-ray- and gamma-emitting pulsar. It boasts the
+        highest-energy ever seen. It resides in its namesake the Vela Constellation.
+        </span>
+      <div class="desc">Vela Pulsar<br>PSR J0835–4510<br>(ESA/Hubble)</div>
+    </div>
+
+    <div class="gallery-item image-tooltip">
+      <a href="{% static 'images/hulse-taylor-binary-pulsar.webp' %}" target="_blank">
+        <img src="{% static 'images/hulse-taylor-binary-pulsar.webp' %}">
+      </a>
+        <span class="tooltip-text">
+        A.K.A. PSR B1913+16. Both are extremely dense neutron stars. They're
+        losing energy and spiraling inward toward each other.
+        </span>
+      <div class="desc">Binary Pulsar<br>The Hulse-Taylor System<br>(ESA/Hubble)</div>
+    </div>
+
+    <div class="gallery-item image-tooltip">
+      <a href="{% static 'images/bluesupergiant_rigel.jpg' %}" target="_blank">
+        <img src="{% static 'images/bluesupergiant_rigel.jpg' %}">
+      </a>
+        <span class="tooltip-text">
+        Rigel is the brightest star in the Orion Constellation. It's also the
+        7th. brightest star in the night sky. It out shines our sun 100,000 in
+        terms of luminosity.
+        </span>
+      <div class="desc">Blue Supergiant<br>Rigel<br>(ESA/Hubble)</div>
+    </div>
+
+    <div class="gallery-item image-tooltip">
+      <a href="{% static 'images/variable_star_rrpuppis.jpg' %}" target="_blank">
+        <img src="{% static 'images/variable_star_rrpuppis.jpg' %}">
+      </a>
+        <span class="tooltip-text">
+        Every 40 days or so (41.5 days), Puppis' brightness varies by a factor of 5. It's
+        around 6,500 light-years away in the Puppis Constellation. Puppis is about
+        200 times bigger than the Sun.
+        </span>
+      <div class="desc">Cepheid Variable Star<br>RS Puppis<br>(ESA/Hubble)</div>
+    </div>
+
+    <div class="gallery-item image-tooltip">
+      <a href="{% static 'images/globular_cluster_omega_centauri.jpg' %}" target="_blank">
+        <img src="{% static 'images/globular_cluster_omega_centauri.jpg' %}">
+      </a>
+        <span class="tooltip-text">
+        It's the brightest and largest cluster in our Milky Way galaxy. The ancients
+        saw it as a single star circa 2,000 years ago. It contains about ten million
+        stars.
+        </span>
+      <div class="desc">Globular Cluster<br>Omega Centauri<br>(ESA/Hubble)</div>
+    </div>
+
+    <div class="gallery-item image-tooltip">
+      <a href="{% static 'images/blue_sg_ SBW20071.jpg' %}" target="_blank">
+        <img src="{% static 'images/blue_sg_ SBW20071.jpg' %}">
+      </a>
+        <span class="tooltip-text">
+        A.K.A. SBW1, is a rare beauty. A blue supergiant star resides in the center
+        of this nebula. A bright supernova is expected soon when big blue explodes.
+        It's located 20,000 light-years from Earth.
+        </span>
+      <div class="desc">Blue Supergiant<br>[SBW2007] 1 Nebula<br>(ESA/Hubble)</div>
+    </div>
+
+    <div class="gallery-item image-tooltip">
+      <a href="{% static 'images/wolf_rayet_hen2427.jpg' %}" target="_blank">
+        <img class="tooltip1" src="{% static 'images/wolf_rayet_hen2427.jpg' %}">
+      </a>
+        <span class="tooltip-text">
+        It's surrounded by the MI-67 nebula. Both are located in the  constellation of Sagitta.
+        </span>
+      <div class="desc">Wolf–Rayet Star (center)<br>Hen 2-427<br>(ESA/WEBB)</div>
+    </div>
+
+    <div class="gallery-item image-tooltip">
+      <a href="{% static 'images/young_star_ll_ori.jpg' %}" target="_blank">
+        <img class="tooltip1" src="{% static 'images/young_star_ll_ori.jpg' %}">
+      </a>
+        <span class="tooltip-text">
+        You can see the bow shock around the youngling. A bow shock is a glowing,
+        curved shock wave. It's created when a star reaches supersonic speeds.
+        </span>
+      <div class="desc">Young Stellar Object<br>LL Orionis, NGC 1977 510<br>(ESA/Hubble)</div>
+    </div>
+
+    <div class="gallery-item image-tooltip">
+      <a href="{% static 'images/wikiimages-sun-11582_1920.jpg' %}" target="_blank">
+        <img class="tooltip1" src="{% static 'images/wikiimages-sun-11582_1920.jpg' %}">
+      </a>
+        <span class="tooltip-text">
+        Our Star is half-way through her lifespan. She's about 5 billion years old.
+        She's medium sized compared to her fellow space companions. I think she's perfect.
+        </span>
+      <div class="desc">G-Type Star<br>The Sun (G2V)<br>(Wiki Images)</div>
+    </div>
+
+    <div class="gallery-item image-tooltip" style="margin-bottom:40px;">
+      <a href="{% static 'images/betelguese.jpg' %}" target="_blank">
+        <img class="tooltip1" src="{% static 'images/betelguese.jpg' %}">
+      </a>
+        <span class="tooltip-text">
+        This artistic rendition features Betelgeuse and its companion star, Siwarha.
+        You can see the wake Siwarha leaves behind as she orbits the red supergiant.
+        </span>
+      <div class="desc">Betelgeuse &<br>Siwarha<br>(ESA/Nasa)</div>
+    </div>
+
+    <div class="gallery-item image-tooltip">
+      <a href="{% static 'images/hen290.jpg' %}" target="_blank">
+        <img src="{% static 'images/hen290.jpg' %}">
+      </a>
+        <span class="tooltip-text">
+        Hen 2-90 is an  unclassified galactic B[e] star ([e] stands for emission lines). It has high speed, bipolar
+        jets. These jets move at speeds of 375,000 miles per hour (600,000 kilometers per hour).
+        </span>
+      <div class="desc">Type-B[e] Star<br>Hen 2-90<br>(ESA/Hubble)</div>
+    </div>
+
+  </div>
+
+<!-- Column Four -->
+  <div class="grid-col">
+
+    <div class="gallery-item image-tooltip">
+      <a href="{% static 'images/exotic_binary_system.jpg' %}" target="_blank">
+        <img class="tooltip1" src="{% static 'images/exotic_binary_system.jpg' %}">
+      </a>
+         <span class="tooltip-text">
+         A spinning white dwarf beats up its companion red dwarf. It lashes out with blasts of radiation.
+         Every 1.97 minutes the whole system pulses. It beats from ultraviolet to radio. (Artist's Impression)
+         </span>
+      <div class="desc">Exotic Binary System<br>AR Scorpii<br>(ESA/Nasa)</div>
+    </div>
+
+    <div class="gallery-item image-tooltip">
+      <a href="{% static 'images/neutron_star.jpg' %}" target="_blank">
+        <img src="{% static 'images/neutron_star.jpg' %}">
+      </a>
+        <span class="tooltip-text">
+        It is the first of its kind found in their namesakes globular star cluster.
+        It rotates ridiculously fast due to getting "spun up" by its companion star.
+        It identifies as a binary pulsar system.
+        </span>
+      <div class="desc">Millisecond Pulsar<br>GLIMPSE-C01A<br>(ESA/Hubble)</div>
+    </div>
+
+    <div class="gallery-item image-tooltip">
+      <a href="{% static 'images/wolf_rayet_gamma_velorum.jpg' %}" target="_blank">
+        <img src="{% static 'images/wolf_rayet_gamma_velorum.jpg' %}">
+      </a>
+        <span class="tooltip-text">
+        It's a multiple star system. The "it" couple are a massive Wolf-Rayet star &
+        a fiery blue supergiant. Every 78.5 days they circle each other.
+        </span>
+      <div class="desc">Wolf-Rayet Star<br>γ² Velorum/Gamma Velorum<br>(ESA/Hubble)</div>
+    </div>
+
+    <div class="gallery-item image-tooltip">
+      <a href="{% static 'images/magellanic_cloud.jpg' %}" target="_blank">
+        <img src="{% static 'images/magellanic_cloud.jpg' %}">
+      </a>
+        <span class="tooltip-text">
+        A.K.A. the Cosmic Reef. NGC 2014 is The Red Nebula. NGC 2020 is The Blue Nebula.
+        Their home, the Large Magellanic Cloud is about 163,000 light-years from Earth.
+        </span>
+      <div class="desc">Large Magellanic Cloud<br>NGC 2014 & 2020 Nebulae<br>(ESA/Hubble)</div>
+    </div>
+
+    <div class="gallery-item image-tooltip">
+      <a href="{% static 'images/wolf_rayet_ag_carinae.jpg' %}" target="_blank">
+        <img src="{% static 'images/wolf_rayet_ag_carinae.jpg' %}">
+      </a>
+        <span class="tooltip-text">
+        A Luminous Blue Variable (LBV) star located 20,000 light-years from Earth.
+        It shines one million times brighter than our Sun. It's expected to go out
+        as a supernova.
+        </span>
+      <div class="desc">Wolf-Rayet Star<br>AG Carinae, V* AG Car<br>(ESA/Hubble)</div>
+    </div>
+
+    <div class="gallery-item image-tooltip">
+      <a href="{% static 'images/globular_cluster_constellation_tucana.jpg' %}" target="_blank">
+        <img src="{% static 'images/globular_cluster_constellation_tucana.jpg' %}">
+      </a>
+        <span class="tooltip-text">
+        It resides in the  Tucana Constellation, A.K.A.The Toucan. Our neighbour galaxy,
+        the Small Magellanic Cloud (SMC), is home to NGC 121. NGC 121 is around 10 billion
+        years old and the oldest cluster in its galaxy.
+        </span>
+      <div class="desc">Globular Cluster<br>NGC 121<br>(ESA/Hubble)</div>
+    </div>
+
+    <div class="gallery-item image-tooltip">
+      <a href="{% static 'images/binary_whitedwarf_redgiant.jpg' %}" target="_blank">
+        <img class="tooltip1" src="{% static 'images/binary_whitedwarf_redgiant.jpg' %}">
+      </a>
+        <span class="tooltip-text">
+        A red giant and a white dwarf reside in this binary system. They're surrounded by a dynamic nebula.
+        </span>
+      <div class="desc">Symbiotic Binary Star<br>R Aquarii<br>(ESA/Hubble)</div>
+    </div>
+
+    <div class="gallery-item image-tooltip">
+      <a href="{% static 'images/bellatrix_gamma_orionis.jpg' %}" target="_blank">
+        <img class="tooltip1" src="{% static 'images/bellatrix_gamma_orionis.jpg' %}">
+      </a>
+        <span class="tooltip-text">
+        A.K.A. Gamma Orionis (γ Orionis) is the 3rd. brightest star in the Orion Constellation.
+        This giant/subgiant is one of the 25 brightest stars in our night sky. Her
+        name in Latin means "Female Warrior" and she's often called the Amazon Star.
+        </span>
+      <div class="desc">Blue-white Giant<br>Bellatrix<br>(AI Generated)</div>
+    </div>
+
+    <div class="gallery-item image-tooltip">
+      <a href="{% static 'images/elliptical_galaxy.jpg' %}" target="_blank">
+        <img class="tooltip1" src="{% static 'images/elliptical_galaxy.jpg' %}">
+      </a>
+        <span class="tooltip-text">
+        This "Magnetic Monster" has delicate filaments, individual threads of cool gas,
+        stretching up to 200,000 light-years. NGC 1275 features a Supermassive Black Hole
+        that likes to blow bubbles of energetic material into its surroundings.
+        </span>
+      <div class="desc">Giant Elliptical Galaxy<br>NGC 1275<br>(ESA/Hubble)</div>
+    </div>
+
+    <div class="gallery-item image-tooltip">
+      <a href="{% static 'images/heic1509a.jpg' %}" target="_blank">
+        <img class="tooltip1" src="{% static 'images/heic1509a.jpg' %}">
+      </a>
+        <span class="tooltip-text">
+        Roughly 3,000 stars call this giant cluster home. It's crammed with
+        some of the hottest & brightest stars in the Milky Way. There are
+        faint dwarf stars and brown dwarfs that reside in this cluster as well.
+        </span>
+      <div class="desc">Young Star Cluster<br>Westerlund 2<br>(ESA/WEBB)</div>
+    </div>
+
+    <div class="gallery-item image-tooltip">
+      <a href="{% static 'images/stellar_nursery.jpg' %}" target="_blank">
+        <img class="tooltip1" src="{% static 'images/stellar_nursery.jpg' %}">
+      </a>
+        <span class="tooltip-text">
+        You can see a massive star forming at the center. The nursery is located in the constellation Gemini.
+        </span>
+      <div class="desc">Stellar Nursery<br>AFGL 5180<br>(ESA/WEBB)</div>
+    </div>
+
+    <div class="gallery-item image-tooltip">
+      <a href="{% static 'images/bright_star_tyc.jpg' %}" target="_blank">
+        <img class="tooltip1" src="{% static 'images/bright_star_tyc.jpg' %}">
+      </a>
+        <span class="tooltip-text">
+        It's located in the Lacerta constellation, a.k.a. The Lizard.<br>Its background is the galaxy NGC 7250.
+        </span>
+      <div class="desc">Stellar Scene Stealer<br>TYC 3203-450-1<br>(ESA/Hubble)</div>
+    </div>
+
+    <div class="gallery-item image-tooltip">
+      <a href="{% static 'images/bug_nebula.jpg' %}" target="_blank">
+        <img class="tooltip1" src="{% static 'images/bug_nebula.jpg' %}">
+      </a>
+        <span class="tooltip-text">
+        It resides in the Scorpius Constellation. Its "wings" are a roiling maelstrom of
+        super heated gas that races across space at about 950,000 kilometers per hour.
+        </span>
+      <div class="desc">Bug/Butterfly Nebula<br>NGC 6302<br>(ESA/Hubble)</div>
+    </div>
+
+    <div class="gallery-item image-tooltip" style="margin-bottom:40px;">
+      <a href="{% static 'images/heic2512b.jpg' %}" target="_blank">
+        <img class="tooltip1" src="{% static 'images/heic2512b.jpg' %}">
+      </a>
+        <span class="tooltip-text">
+        It resides in the constellation Piscis Austrinus. You can see the debris ring and
+        the dust clouds, cs1 & cs2 that surround the star. (cs1 was once thought to be a planet.)
+        </span>
+      <div class="desc">Type-A star<br>Fomalhaut<br>(ESA/Nasa)</div>
+    </div>
+
+    <div class="gallery-item image-tooltip">
+      <a href="{% static 'images/hourglass_nenbula.jpg' %}" target="_blank">
+        <img src="{% static 'images/hourglass_nenbula.jpg' %}">
+      </a>
+        <span class="tooltip-text">
+        A.K.A. MyCn18 (the Engraved Hourglass Nebula) is a planetary nebula
+        (A glowing cloud of dust & gas shed by the dying star).
+        It resides in the southern constellation Musca.
+        It's about 8,000 light-years from Earth.
+        </span>
+      <div class="desc">Hourglass Nebula<br>MyCn18<br>(ESA/Hubble)</div>
+    </div>
+
+  </div>
+
+</div><br><br><br>
+
+{% endblock %}

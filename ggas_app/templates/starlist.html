@@ -1,0 +1,332 @@
+{% extends "master.html" %}
+{% load static %}
+{% block body_class %}starlist{% endblock %}
+
+{% block title %}
+  Stellar Classes
+{% endblock %}
+{% block link %}
+  <link rel="stylesheet" href="{% static 'css/ggastyle.css' %}">
+{% endblock %}
+{% block style %}{% endblock %}
+
+{% block content %}
+
+<div class="starlist-grid-container">
+
+  <div class="header"><h1 style="text-align:center;">All Things Stellar</h1>
+  </div>
+    <!-- ⭐ LEFT PANEL (added here, nothing else touched) -->
+  <div class="spectral">
+    <h2 class="spectral-class-header">Spectral<br>Classification</h2>
+    <p style="color: #ada6d8;">(OBAFGKM)</p>
+    <p class="surface-temp">Surface temperatures:</p>
+      <ul>
+        <li class="tooltip1">
+          <a class="a1" href="http://127.0.0.1:8000/details/16">
+            O: <span style="color:#1E90FF;">Blue</span> (>30,000 K)
+          </a>
+            <span class="tooltip1text1">
+              <div class="bg">
+                O-Type are massively hot, rare luminous
+                <span style="color:#1E90FF;">blue</span> stars.
+                They have incredibly short lifespans (a few million years).
+              </div>
+            </span>
+        </li>
+
+        <li class="tooltip1">
+          <a class="a1" href="http://127.0.0.1:8000/details/1">
+            B: <span style="color:#4169E1;">Blue</span>-<span class="text-effects0">White</span> (10,000–30,000 K)
+          </a>
+            <span class="tooltip1text1">
+              <div class="bg">
+                B-type are bright, very hot <span style="color:#1E90FF;">blue</span>‑white celestial bodies.
+                They contain 2 to 18 times the mass of our Sun.
+              </div>
+            </span>
+        </li>
+
+        <li class="tooltip1">
+          <a class="a1" href="http://127.0.0.1:8000/details/13">
+            A: <span class="text-effects0">White</span> (7,500–10,000 K)
+          </a>
+            <span class="tooltip1text1">
+              <div class="bg">
+                A-Type are white stars with strong hydrogen lines.
+                Usually only a few 100 million years old. Youngsters.
+              </div>
+            </span>
+        </li>
+
+        <li class="tooltip1">
+          <a class="a1" href="http://127.0.0.1:8000/details/12">
+            F: <span style="color:#ffe600;">Yellow</span>-<span class="text-effects0">White</span> (6,000–7,500 K)
+          </a>
+            <span class="tooltip1text1">
+              <div class="bg">
+                F-type are bright, white-to-<span style="color:#ffff66;">yellowish</span>-white main sequence stars.
+                They are hotter and more massive than our Sun.
+              </div>
+            </span>
+        </li>
+
+        <li class="tooltip1">
+          <a class="a1" href="http://127.0.0.1:8000/details/4">
+            G: <span style="color:#ffff00;">Yellow</span> (5,200–6,000 K)
+          </a>
+            <span class="tooltip1text1">
+              <div class="bg">
+                Look UP! Our very own Sun <i class="fa-solid fa-sun" style="color: rgb(255, 212, 59);"></i> is a G-type,
+                "<span style="color:#ffff00;">Yellow</span> Dwarf", main-sequence star (G2V). Our Sun is stable, currently fusing
+                hydrogen and is on the smallish side, next to the giant/supergiant stars. It appears white when viewed from space due
+                to light being emitted across all visible colors. (Many astronomers no longer use the term 'yellow dwarf').
+              </div>
+            </span>
+        </li>
+
+        <li class="tooltip1">
+          <a class="a1" href="http://127.0.0.1:8000/details/3">
+            K: <span style="color:orange;">Orange</span> (3,700–5,200 K)
+          </a>
+            <span class="tooltip1text1">
+              <div class="bg">
+                K-Type / <span style="color:darkorange;">Orange</span> Dwarfs —
+                main-sequence stars slightly smaller, cooler, and dimmer than our Sun.
+              </div>
+            </span>
+        </li>
+
+        <li class="tooltip1">
+          <a class="a1" href="http://127.0.0.1:8000/details/5">
+            M: <span style="color:red;">Red</span> (<3,700 K)
+          </a>
+            <span class="tooltip1text1">
+              <div class="bg">
+                M-type / <span style="color:darkred;">Red</span> Dwarfs —
+                the coolest, smallest, and most common type of star in the universe.
+              </div>
+            </span>
+        </li>
+      </ul>
+
+    <div class="tooltip1" id="extensions-heading">Extensions: L, T, Y, S, C
+      <span class="tooltip1text1">
+        <div class="bg"><span style="color:brown;">Brown</span> Dwarfs (L, T, Y Types): 'Failed stars' that are too small to sustain nuclear fusion. Y-types are the coldest.<br>
+          S-Type & C-Type Carbon Star: Cool giants with atmospheres rich in carbon or heavy elements.
+        </div>
+      </span>
+    </div><br>
+
+  </div>
+    <!--  END LEFT PANEL -->
+
+ <!--  CENTER PANEL STARLIST  -->
+
+   <div class="starlist" id="starlistborder">
+     <h1 style="color: #5452cb;">Stellar Names</h1>
+     <p style="color: #ada6d8;">(Including Variants)</p>
+       <ul class="list-unstyled" id="stellar-names-list">
+         {% for x in starcategories %}
+           <li>
+             <a href="{% url 'details' x.id %}">{{ x.star_name }}</a>
+           </li>
+         {% endfor %}
+       </ul><br><br>
+
+     <a href="{% url 'homepage' %}" class="homebutton"><span>Homepage</span></a>
+     <a href="{% url 'photogallery' %}" class="photogallery-button" target="_blank"><span>Photo Gallery</span></a>
+     <br><br>
+
+  </div>  <!-- end wrapper -->
+
+    <!--  RIGHT PANEL  -->
+    <div class="startypes">
+      <h2 class="star-type-header">Star Types</h2>
+      <p style="color: #ada6d8;">(by Life Stage)</p>
+      <p class="star-type">Main Sequence:</p>
+        <ul>
+          <li class="tooltipright"><a class="a1" href="http://127.0.0.1:8000/details/16"><span class="o-type">O-Type Star</span></a>
+            <span class="tooltiptextright">
+              <div class="bg">
+                <p>O-Type Example:</p>
+                <p>Zeta Puppis(Naos). A rare, extremely massive, and hot <span style="color:skyblue;">blue</span> star.</p>
+                <p>It's roughly 1,080 light-years away. It's perfect for studying the evolution of massive stars.</p>
+              </div>
+            </span>
+          </li>
+
+          <li class="tooltipright">
+            <a class="a1" href="http://127.0.0.1:8000/details/1"><span class="b-type">B-Type Star</span></a>
+              <span class="tooltiptextright">
+                <div class="bg">
+                  <p>B-Type Example:</p>
+                  <p>Rigel (Beta Orionis) — A hot, luminous <span style="color:#00BFFF;">blue</span> supergiant.</p>
+                  <p>It's visible in the Orion constellation, located about 860 light-years from Earth.</p>
+                </div>
+              </span>
+          </li>
+
+          <li class="tooltipright">
+            <a class="a1" href="http://127.0.0.1:8000/details/4"><span style="color:#FFD700;">G-Type Star</span></a>
+              <span class="tooltiptextright">
+                <div class="bg">
+                  <p>G-type Examples:</p>
+                  <p>The Sun <i class="fa-solid fa-sun" style="color: rgb(255, 212, 59);"></i> — The G2V <span style="color:gold;">yellow</span> dwarf at the center of our solar System,
+                     which burns hydrogen into helium in its core.</p>
+                  <p>Alpha Centauri A is also a g-type star and visible from Earth.</p>
+                </div>
+              </span>
+          </li>
+        </ul>
+
+      <p class="star-type">Giants:</p>
+        <ul>
+          <li class="tooltipright">
+            <a class="a1" href="http://127.0.0.1:8000/details/9"><span style="color:red;">Red</span> Giant/Supergiant</a>
+              <span class="tooltiptextright">
+                <div class="bg">
+                  <p><span style="color:red;">Red</span> Supergiant example:</p>
+                  <p>Betelgeuse (Alpha Orionis) — One of the largest stars visible to the naked eye.</p>
+                  <p>It's located about 640 light-years away in the Orion constellation.</p>
+                </div>
+              </span>
+          </li>
+
+          <li class="tooltipright">
+            <a class="a1" href="http://127.0.0.1:8000/details/11"><span style="color:#00BFFF;">Blue</span> Giant/Supergiant</a>
+              <span class="tooltiptextright">
+                <div class="bg">
+                  <p><span style="color:#00BFFF;">Blue</span> Supergiant example:</p>
+                  <p>Rigel — It's a classified "classic" due to its extreme mass and luminosity.</p>
+                  <p>It's located in the bottom right corner of the Orion constellation (You can see it from the Northern Hemisphere). It's Orion's left foot/heel.</p>
+                </div>
+              </span>
+          </li>
+        </ul>
+
+      <p class="star-type">Evolved Stars & Dwarfs:</p>
+        <ul>
+          <li class="tooltipright">
+            <a class="a1" href="http://127.0.0.1:8000/details/14"><span class="text-effects0">White</span> Dwarf</a>
+              <span class="tooltiptextright">
+              <div class="bg">
+                <p><span class="text-effects0">White</span> Dwarf example:</p>
+                <p>Sirius B (also nicknamed "the Pup")</p>
+                <p>It's distance from Earth ~6.5 light-years away.</p>
+              </div>
+            </span>
+         </li>
+
+         <li class="tooltipright">
+           <a class="a1" href="http://127.0.0.1:8000/details/7"><span style="color:#8B4513;">Brown</span> Dwarf</a>
+             <span class="tooltiptextright">
+               <div class="bg">
+                 <p><span style="color:#8B4513;">Brown</span> Dwarf example:</p>
+                 <p>Luhman 16A (part of a binary <span style="color:#A0522D;">brown</span> dwarf system).</p>
+                 <p>Distance from Earth: ~6.5 light-years away.</p>
+              </div>
+            </span>
+          </li>
+
+          <li class="tooltipright">
+            <a class="a1" href="http://127.0.0.1:8000/details/18"><span class="black-dwarf">Black</span> Dwarf</a>
+              <span class="tooltiptextright">
+                <div class="bg">
+                  <p><span class="black-dwarf">Black</span> Dwarf example:</p>
+                  <p>Star that shall not be named. None exist yet.</p>
+                  <p>Theoretical dead white dwarfs that are completely cooled down.</p>
+                </div>
+              </span>
+          </li>
+
+           <li class="tooltipright">
+             <a class="a1" href="http://127.0.0.1:8000/details/6"><span style="color:#23b5f3;">Wolf-Rayet Star</span></a>
+               <span class="tooltiptextright">
+                 <div class="bg">
+                   <p>Wolf-Rayet example:</p>
+                   <p>WR 124 (Made famous and fantasticallly imaged by the James Webb Space Telescope)</p>
+                   <p>Distance from Earth: ~550 to 590 light-years away.</p>
+                </div>
+              </span>
+          </li>
+
+          <li class="tooltipright">
+            <a class="a1" href="http://127.0.0.1:8000/details/22"><span style="color:#b30000;">S-Type</span> & <span style="color:#e63d00;">C-Type</span> Carbon Star</a>
+              <span class="tooltiptextright">
+                <div class="bg">
+                  <p>S-type example:</p>
+                  <p>Chi Cygni is a highly pulsating variable giant star.<br>Distance: ~550 to 590 light-years away.</p>
+                  <p>C-Type example:</p>
+                  <p>La Superba (Y Canum Venaticorum).<br>Distance: ~711 light-years away from Earth.</p>
+                </div>
+              </span>
+            </li>
+        </ul>
+
+      <p class="star-type">Neutron Stars & Pulsars <i class="fa-solid fa-star-half-stroke fa-fade" style="color: rgb(235, 92, 34);"></i>:</p>
+        <ul>
+          <li class="tooltipright">
+            <a class="a1" href="http://127.0.0.1:8000/details/2"><span class="text-effects">Neutron Star & Magnetar</span></a>
+              <span class="tooltiptextright">
+                <div class="bg">
+                  <p>Neutron Star example:</p>
+                  <p>RX J1856.5−3754 is an isolated, quiet neutron star and part of the "Magnificent Seven" group.<br>Distance: ~400 light-years away</p>
+                  <p>Magnetar example:</p>
+                  <p> XTE J1810-197 is the first transient radio-emitting magnetar ever discovered.<br>Distance: ~8,000 light-years away</p>
+                </div>
+              </span>
+            </li>
+
+          <li class="tooltipright">
+            <a class="a1" href="http://127.0.0.1:8000/details/20"><span class="text-effects1">Pulsars/Binary Pulsars</span></a>
+              <span class="tooltiptextright">
+                <div class="bg">
+                  <p>Binary Pulsar example:</p>
+                  <p>PSR J2222−0137 is a binary system consisting of a neutron star and a heavily crystallized white dwarf.
+                  <br>Distance: ~870 light-years away</p>
+                </div>
+              </span>
+            </li>
+
+         <li class="tooltipright"><span class="text-effects">Millisecond Pulsars (MSPs)</span>
+           <a class="a1" href="http://127.0.0.1:8000/details/19"></a>
+             <span class="tooltiptextright">
+               <div class="bg">
+                 <p>Millisecond Pulsar (MSP) example:</p>
+                 <p>PSR J0437-4715 is a highly stable star that spins nearly 174 times every single second.
+                 <br>Distance: ~512 light-years away (157 parsecs)</p>
+               </div>
+             </span>
+         </li>
+
+
+          <li class="tooltipright"><span class="text-effects2">RRAT (Rotating Radio Transient)</span>
+            <a class="a1" href="http://127.0.0.1:8000/details/25"></a>
+              <span class="tooltiptextright">
+                <div class="bg">
+                  <p>RRAT example:</p>
+                  <p>J1819−1458 has been thoroughly studied & is known for emitting brief, sporadic radio bursts instead of a continuous pulse.</p>
+                  <p>Distance: ~11,700 light-years away (3.6 kiloparsecs).</p>
+                </div>
+              </span>
+            </li>
+
+          <li class="tooltipright"><span class="text-effects3">Quark star</span>
+            <span class="tooltiptextright">
+              <div class="bg">
+                <p>Quark stars are purely theoretical, ultra-dense remnants.
+                   The neutrons have melted into a "gumbo" of free up, down, and strange quarks.
+                </p>
+              </div>
+            </span>
+          </li>
+        </ul>
+    </div>
+    <br><br><br>
+    <!-- ⭐ END RIGHT PANEL -->
+
+ <!--  Not using right now but I may later  -->
+  <div class="button"></div>
+
+{% endblock %}

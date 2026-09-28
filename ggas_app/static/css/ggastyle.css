@@ -1,0 +1,562 @@
+body {
+  font-family: "Arial Black", poppins, sans-serfif;
+  font-size: 1rem;
+  background-color: #1616e9; /* Fallback cosmic blue */
+  color: white;
+  margin: 0;
+  padding: 20px;
+}
+
+* {
+box-sizing: border-box;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* separate page backgrounds */
+
+body.starlist {
+  background: url("../images/starslist1.png") no-repeat center center fixed;
+  background-size: cover;
+  padding: 10px;
+}
+
+body.star_search_results {
+  background: url("../images/starscape.png") no-repeat center center fixed;
+  background-size: cover;
+}
+
+
+/* starlist page */
+
+.header h1,
+.header h3 {
+  margin-top: 0;
+  text-align: center;
+}
+
+.starlist-grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "header"
+    "spectral"
+    "starlist"
+    "startypes"
+    "button";
+  gap: 60px;
+}
+
+@media (min-width: 600px) {
+  .starlist-grid-container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "header header"
+      "spectral starlist"
+      "startypes startypes"
+      "button button";
+  }
+
+  .header { grid-area: header; }
+  .spectral { grid-area: spectral; }
+  .starlist { grid-area: starlist; }
+  .startypes { grid-area: startypes; }
+  .button { grid-area: button; }
+
+}
+
+@media (min-width: 768px) {
+  .starlist-grid-container {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+      "header header header"
+      "spectral starlist startypes"
+      "button button button";
+  }
+
+  .header { grid-area: header; }
+  .spectral { grid-area: spectral; }
+  .starlist { grid-area: starlist; }
+  .startypes { grid-area: startypes; }
+  .button { grid-area: button; }
+}
+
+.header {
+  grid-area: header;
+  text-align: center;
+  color: black;
+  margin-top:30px;
+  border-radius: 20px;
+  text-shadow:
+     -1px -1px 0 white,
+      1px -1px 0 white,
+     -1px  1px 0 white,
+      1px  1px 0 white;
+}
+
+/* clickable list items for spectral & startypes */
+.a1 {
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+}
+
+.spectral {
+  grid-area: spectral;
+  text-align: center;
+  border: 2px solid #5873fb;
+  outline: 1px solid white;
+  padding: 10px 0 20px 0;
+  padding: 10px;
+  border-radius: 10px;
+  height: max-content;
+}
+
+/* List heading for both right & left columns */
+.surface-temp, .star-type, #extensions-heading {
+   background-color: rgba(0,0,100,0.8);
+   color: #e6e6ff;
+   border: 1px solid white;
+   border-radius: 20px;
+   padding: 10px;
+   font-size:1.2rem;
+}
+
+#extensions-heading {
+  width: 100%;
+}
+
+.spectral ul,
+.startypes ul {
+  list-style: none;
+  list-style-type: none;
+  padding-left: 0;
+  margin-left: 0;
+  display: block;
+}
+
+.spectral li,
+.startypes li {
+  display: block !important;
+  position: relative;
+  margin: 2px 0;   /* tight spacing */
+  list-style: none;
+  line-height: 1.1; /* removes extra air */
+  border-bottom: none;
+  margin-bottom: 2px;
+  padding: 10px 20px;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+}
+
+.spectral li {
+  margin-bottom:30px;
+}
+
+.spectral li:hover, .startypes li:hover {
+  background-color: rgba(0,0,90,0.8);
+  border-radius: 20px;
+  border-bottom: 1px white solid;
+}
+
+/* in case the browser is still trying to draw something */
+.spectral li::marker,
+.startypes li::marker {
+  content: "";
+}
+
+.spectral a,
+.startypes a {
+  display: block !important;
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+  color:white;
+}
+
+.text-effects0 {
+  color: white;
+  text-shadow: 1px 1px 2px black, 0 0 25px lightblue, 0 0 5px lightpink;
+}
+
+/* If I add photos at the bottom  of the columns */
+.img1 {
+  border-radius: 12px;
+  box-shadow: 2px 2px 5px rgba(255,255,255,0.8);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform: scale(1);
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.image-spectral a, .image-starlist a, .image-startypes a {
+  text-decoration: none;
+  color: lightblue;
+  text-align: center;
+}
+
+.img1:hover {
+  transform: scale(1.15); /* Makes the photo 15% bigger */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); /* Adds a floating shadow */
+  z-index: 2; /* Brings it above other elements */
+}
+/* end of image code */
+
+.starlist {
+  grid-area: starlist;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  height: max-content;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+#starlistborder {
+  border: 2px solid #5873fb;
+  outline: 1px solid white;
+}
+
+#stellar-names-list li a:hover {
+  color: white;
+  text-decoration: none;
+  background: linear-gradient(
+    to right,
+    #ffffff,  /* white */
+    #ffcc00,  /* yellow */
+    #ff4500,  /* orange */
+    #ff0000,  /* red */
+    #008000,  /* green */
+    #00aaff,   /* blue */
+    #4b0082  /* indigo */
+  );
+  background-size: 400% 400%; /* allows movement */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: starColors 8s ease infinite;
+}
+
+/* Animate gradient shifting */
+@keyframes starColors {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+.starlist > h1 {
+  font-size: 30px;
+  margin-bottom: 7px;
+}
+
+.starlist > p {
+  margin-bottom: 7px;
+}
+
+.startypes {
+  grid-area: startypes;
+  text-align: center;
+  border: 2px solid #5873fb;
+  outline: 1px solid white;
+  padding: 10px;
+  border-radius: 10px;
+  height: max-content;
+}
+
+.star-type-header, .spectral-class-header {
+  background-color: rgba(0,0,0,0.6);
+  color: #5452cb;
+  border-radius: 20px;
+}
+
+.startypes li {
+  margin-bottom:12px;
+}
+
+.startypes li:hover {
+  background-color: rgba(0,0,90,0.8);
+  border-radius: 20px;
+}
+
+.black-dwarf {
+  color: black;
+  text-shadow:
+     -1px -1px 0 white,
+      1px -1px 0 white,
+     -1px  1px 0 white,
+      1px  1px 0 white;
+}
+
+.b-type {
+  color: #0000ff;
+  text-shadow:
+     -1px -1px 0 lightblue,
+      1px -1px 0 lightblue,
+     -1px  1px 0 lightblue,
+      1px  1px 0 lightblue;
+}
+
+.o-type {
+  color: #00BFFF;
+  text-shadow:
+     -1px -1px 0 darkblue,
+      1px -1px 0 darkblue,
+     -1px  1px 0 darkblue,
+      1px  1px 0 darkblue;
+}
+
+.text-effects {
+  color: black;
+  text-shadow: 1px 1px 2px white, 0 0 25px blue, 0 0 5px lightblue;
+}
+
+.text-effects1 {
+  color: black;
+  text-shadow: 1px 1px 2px white, 0 0 25px red, 0 0 5px #ffb3b3;
+}
+
+.text-effects2 {
+  color: black;
+  text-shadow: 1px 1px 2px white, 0 0 25px darkorange, 0 0 5px lightyellow;
+}
+
+.text-effects3 {
+  color: black;
+  text-shadow: 1px 1px 2px white, 0 0 25px indigo, 0 0 5px lavender;
+}
+
+.homebutton {
+  display: inline-block;
+  margin: 10px 0;
+  border-radius: 12px;
+  background-color: rgba(0,0,90,0.6);
+  border: 1px solid white;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  width: 200px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+.homebutton:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.homebutton span {
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.homebutton span:after {
+  content: '\00ab';
+  position: absolute;
+  opacity: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.homebutton:hover span {
+  padding-right: 25px;
+}
+
+.homebutton:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.homebutton:hover {
+  box-shadow: 0 5px grey;
+  transform: translateY(4px);
+  background-color: rgba(0,0,0,0.6);
+  color: white;
+}
+
+.photogallery-button {
+  display: inline-block;
+  margin: 10px 0;
+  border-radius: 12px;
+  background-color: rgba(0,0,90,0.6);
+  border: 1px solid white;
+  color: white;
+  text-align: center;
+  padding: 10px 20px;
+  width: 200px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+.photogallery-button:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.photogallery-button span {
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.photogallery-button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.photogallery-button:hover span {
+  padding-right: 25px;
+}
+
+.photogallery-button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.photogallery-button:hover {
+  box-shadow: 0 5px grey;
+  transform: translateY(4px);
+  background-color: rgba(0,0,0,0.6);
+  color: white;
+}
+
+.tooltip1 {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px solid black;
+  cursor: pointer;
+  padding: 10px 20px;
+}
+
+/* Tooltip Background */
+.bg {
+  background-color: rgba(0,0,90,0.6);
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid white;
+}
+
+.tooltip1text1 {
+  visibility: hidden;
+  width: 350px;
+  height: max-content;
+  background-image: url("/static/images/starscape.png");
+  color: white;
+  border: 1px solid white;
+  border-radius: 10px;
+  padding: 10px;
+  position: absolute;
+  z-index: 1;
+  top: -5px;
+  left: 105%;
+  font-family: arial, sans-serif;
+}
+
+.tooltip1:hover  .tooltip1text1 {
+  visibility:visible;
+  font-size:.85rem;
+  padding:10px;
+}
+
+@media (max-width: 1000px) {
+  .tooltip1text1  {
+    left: 50%;
+    top: -120%;
+    transform: translateX(-50%);
+    width: 90vw;       /* Fit nicely on small screens */
+    max-width: 250px;  /* Prevent overly wide tooltips */
+  }
+}
+
+.tooltipright {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  padding: 20px;
+}
+
+.tooltiptextright {
+  visibility: hidden;
+  width: 350px;
+  height: max-content;
+  background-image: url("/static/images/starscape.png");
+  color: white;
+  border: 1px solid white;
+  text-align: center;
+  border-radius: 10px;
+  padding: 10px;
+  position: absolute;
+  z-index: 1;
+  top: -5px;
+  right: 110%;
+  font-family: poppins,sans-serif;
+
+}
+
+
+.tooltipright:hover .tooltiptextright {
+  visibility:visible;
+  font-size:.85rem;
+  padding:10px;
+
+}
+
+@media (max-width: 1000px) {
+  .tooltiptextright {
+    left: 50%;   /* centers tooltip horizontally */
+    right: auto; /* Cancels the desktop positioning so the mobile version can take over. */
+    top: -120%;  /* Moves the tooltip above the hovered item so it never gets cut off. */
+    transform: translateX(-50%); /* Perfectly centers it relative to the hovered element. */
+    width: 90vw;       /* Ensures the tooltip fits inside the viewport on tiny screens. */
+    max-width: 250px;  /* Prevents it from becoming too wide and unreadable. */
+  }
+}
+
+/*
+.button {
+  grid-area: button;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+}  Not using right now, maybe later.
+*/
+
+
+
+/* star_search_results page */
+
+.list-group-item {
+  background-color: rgba(0,0,0,0.8);
+  color: white;
+}
+
+.search {
+  color: black;
+  text-shadow:
+     -1px -1px 0 white,
+      1px -1px 0 white,
+     -1px  1px 0 white,
+      1px  1px 0 white;
+  text-align:center;
+}
+
+.matching-star {
+  background-color: rgba(0,0,0,0.8);
+  padding: 7px;
+  border-radius: 12px;
+}
+
+.results-container {
+  text-align: center;
+  width: 50%;
+  margin: auto;
+}
+

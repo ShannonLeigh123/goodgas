@@ -1,0 +1,98 @@
+body {
+  font-family: "Arial Black", poppins, sans-serfif;
+  font-size: 1rem;
+  background-color: #1616e9; /* Fallback cosmic blue */
+  color: white;
+  margin: 0;
+  padding: 20px;
+}
+
+* {
+box-sizing: border-box;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+body.homepage {
+  background: url("../images/homepage.png") no-repeat center center fixed;
+  background-size: cover;
+}
+
+.homepage-container {
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.6); /* semi-transparent black */
+  padding: 50px;
+  border-radius: 40px;
+  margin-top: 100px;
+}
+
+.homepage-container h1 span {
+  color:black;
+  text-shadow:
+     -1px -1px 0 white,
+      1px -1px 0 white,
+     -1px  1px 0 white,
+      1px  1px 0 white;
+}
+
+.thestars-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.thestars {
+  display: inline-block;
+  border-radius: 12px;
+  background-color: white;
+  border: 2px solid grey;
+  color: black;
+  text-align: center;
+  padding: 10px;
+  width: 200px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  max-width: 100%;
+  white-space: normal;
+}
+
+.thestars:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.thestars span {
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.thestars span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.thestars:hover span {
+  padding-right: 25px;
+}
+
+.thestars:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.thestars:hover {
+  box-shadow: 0 5px grey;
+  transform: translateY(4px);
+  background-color:rgba(0,0,0,0.6);
+  color:white;
+}
+

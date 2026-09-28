@@ -1,0 +1,40 @@
+{% extends "master.html" %}
+{% load static %}
+{% block body_class %}star_search_results{% endblock %}
+
+{% block title %}
+  Search Results
+{% endblock %}
+
+{% block link %}
+  <link rel="stylesheet" href="{% static 'css/ggastyle.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="results-container mt-5">
+  <h1><span class="search"><i class="fa-solid fa-magnifying-glass" style="text-shadow: 1px 1px 2px white, 0 0 25px lightblue, 0 0 5px lightpink;"></i> Search Results for "{{ query }}"
+    <i class="fa-solid fa-star-half-stroke" style="text-shadow: 1px 1px 2px white, 0 0 25px lightblue, 0 0 5px lightpink;"></i> </span></h1>
+
+  {% if results %}
+    <p><span class="matching-star">{{ results|length }} matching star(s) were found:</span></p>
+    <div class="list-group mt-3">
+      {% for star in results %}
+        <!-- Links back to the details page of the found star -->
+        <a href="{% url 'details' star.pk %}" class="list-group-item list-group-item-action">
+          <h5>{{ star.star_name }}</h5>
+        </a>
+      {% endfor %}
+    </div>
+  {% else %}
+    <div class="alert alert-warning mt-3" style="background-color:#408db7;
+      color:black;">
+      No match found for "{{ query }}". Try searching for something else.
+    </div>
+  {% endif %}
+  <br>
+
+  <a href="{% url 'starlist' %}" class="thestars" style="text-decoration:none;">Go to Full Star List</a>
+
+</div>
+{% endblock %}
+

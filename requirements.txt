@@ -1,0 +1,14 @@
+asgiref==3.11.1
+beautifulsoup4==4.15.0
+Django==4.2.30
+django-admin-sortable2==2.3.1
+django-bootstrap-v5==1.0.11
+django-environ==0.14.0
+django-icons==26.1
+gunicorn==26.2.0
+psycopg2-binary==2.9.12
+soupsieve==2.8.4
+sqlparse==0.5.5
+typing_extensions==4.15.0
+tzdata==2026.2
+whitenoise==6.12.0

@@ -1,0 +1,202 @@
+{% extends "master.html" %}
+{% load static %}
+{% block body_class %}detailspage{% endblock %}
+
+{% block title %}
+  Bio of {{ starcategories.star_name }}
+{% endblock %}
+{% block link %}
+  <link rel="stylesheet" href="{% static 'css/details.css' %}">
+{% endblock %}
+{% block style %}{% endblock %}
+
+{% block content %}
+
+<div class="grid-container">
+  <div class="adastra">
+    <h1><i class="fa-solid fa-star"></i> Ad Astra <i class="fa-solid fa-star"></i></h1>
+  </div>
+
+  <div class="left">
+    <h4 style="text-align:center;">M☉ Notation</h4>
+    <p style="text-align:center;">Unit of measurement in<br>astronomy called the solar mass.</p>
+      <div class="details-list">
+        <ul class="m-notation">
+          <li class="detail-row">M stands for Mass</li>
+          <li class="detail-row">☉ astronomical symbol/Sun</li>
+          <li class="detail-row">1 M☉, benchmark unit</li>
+          <li class="detail-row">Equal to mass of our Sun</li>
+        </ul>
+      </div>
+    <div class="dropdown">
+      <button class="dropbtn">Star Links</button>
+        <div class="dropdown-content">
+          <a href="https://www.nasa.gov/" target="_blank">Nasa's Home</a>
+          <a href="https://science.nasa.gov/learn/heat/resource/star-types/" target="_blank">Star-Types by Nasa</a>
+          <a href="https://esahubble.org/images/" target="_blank">ESA/Hubble Images</a>
+          <a href="https://esahubble.org/images/archive/category/stars/" target="_blank">Hubble Archives</a>
+          <a href="https://science.nasa.gov/mission/webb/multimedia/images/" target="_blank">Webb Images</a>
+          <a href="https://chandra.harvard.edu/photo/category/stars.html" target="_blank">Chandra X-Ray Obs.</a>
+          <a href="https://www.eso.org/public/" target="_blank">ESO</a>
+          <a href="https://www.google.com/webhp" target="_blank">Google Search</a>
+      </div>
+    </div>
+
+    <div class="image-leftside">
+      <a href="{% static 'images/wikiimages-sun.jpg' %}" target="_blank">
+        <img class="img1" src="{% static 'images/wikiimages-sun.jpg' %}" alt="The Sun"></a>
+    </div>
+    <p style="color:darkorange;text-align:center;">The Sun<br><span class="hgn">(NASA/ESA)</span></p><br>
+
+    <div class="image-leftside">
+      <a href="{% static 'images/spirograph_nebula.jpg' %}" target="_blank">
+        <img class="img1" src="{% static 'images/spirograph_nebula.jpg' %}" alt="Spirograph Nebula"></a>
+    </div>
+    <p style="color:darkorange;text-align:center;">Spirograph Nebula<br><span class="hgn">(NASA/ESA)</span></p><br>
+
+    <div class="image-leftside">
+      <a href="{% static 'images/hourglass_nenbula.jpg' %}" target="_blank">
+        <img class="img1" src="{% static 'images/hourglass_nenbula.jpg' %}" alt="Hourglass Nebula"></a>
+    </div>
+    <p style="color:darkorange;text-align:center;">Hourglass Nebula<br><span class="hgn">(NASA/ESA)</span></p>
+
+  </div>
+
+  <div class="details">
+    <h2 class="star-name">{{ starcategories.star_name }}</h2>
+    <div class="details-list">
+       <div class="detail-row">
+         <p class="fade-in"><i class="fa-solid fa-star"></i> <span>Star Classification:</span> <i>{{ starcategories.star_classification }}</i></p></div>
+       <div class="detail-row">
+         <p class="fade-in"><i class="fa-regular fa-sun" style="color:skyblue;text-shadow: 1px 1px 2px white, 0 0 25px lightblue, 0 0 5px lightpink;">
+           </i> <span>Luminosity Classification:</span> <i>{{ starcategories.luminosity_classification }}</i></p></div>
+       <div class="detail-row">
+         <p class="fade-in">
+         <i class="fa-solid fa-temperature-high" style="color:red;"></i> <span>Temperature (K)</span> :
+         <i class="temperature-value
+           {% if starcategories.temperature >= 100000 %}hot-extreme
+           {% elif starcategories.temperature >= 20000 %}hot
+           {% elif starcategories.temperature >= 6000 %}medium
+           {% elif starcategories.temperature >= 3000 %}cool
+           {% else %}cold
+           {% endif %}">
+           {{ starcategories.temperature }}</i></p></div>
+      <div class="detail-row">
+        <p class="fade-in"><i class="fa-solid fa-weight-hanging" style="color:green;"></i> <span>Mass:</span> <i>{{ starcategories.mass }}</i></p></div>
+      <div class="detail-row">
+        <p class="fade-in"><i class="fa-solid fa-flask" style="color: rgb(116, 192, 252);"></i> <span>Elemental Composition:</span> <i>{{ starcategories.elemental_composition }}</i></p></div>
+      <div class="detail-row">
+        <p class="fade-in"><i class="fa-solid fa-list" style="color: rgb(60, 118, 230);"></i> <span>Description:</span> <i>{{ starcategories.description }}</i></p></div>
+      <div class="detail-row">
+        <p class="fade-in"><i class="fa-solid fa-hands-holding-child" style="color: rgb(116, 192, 252);"></i> <span>Birth:</span> <i>{{ starcategories.birth }}</i></p></div>
+      <div class="detail-row">
+        <p class="fade-in"><i class="fa-solid fa-seedling" style="color: hsl(143, 42%, 22%);"></i> <span>Life:</span> <i>{{ starcategories.life }}</i></p></div>
+      <div class="detail-row">
+        <p class="fade-in">☠️ <span>Death:</span> <i>{{ starcategories.death }}</i></p></div>
+      <div class="detail-row">
+        <p class="fade-in"><i class="fa-solid fa-spiral fa-spin" style="color: rgb(21, 48, 209);"></i> <span>Reincarnation:</span> <i>{{ starcategories.reincarnation }}</i></p></div>
+      <div class="detail-row">
+        <p class="fade-in"><i class="fa-solid fa-person-chalkboard" style="color: rgb(145, 38, 14);"></i> <span>Example:</span> <i>{{ starcategories.example }}</i></p></div>
+    </div>
+
+    <div class="searchform">
+      <form class="search-form d-flex align-items-center" action="{% url 'star_search' %}" method="GET">
+        <div class="search-input-wrapper flex-grow-1">
+        <!-- Keep this SVG xmlns URL exactly like this -->
+        <svg class="search-icon" xmlns="http://w3.org" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"      stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"></circle>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input
+          type="search"
+          name="q"
+          placeholder="Search for another star type..."
+          aria-label="Search stars"
+          required>
+      </div>
+        <button type="submit" class="search-button">Search</button>
+    </form>
+  </div>
+
+  </div>
+
+  <div class="right">
+    <h4 style="text-align:center;">Luminosity Classes
+      <i class="fa-solid fa-lightbulb" style="color: rgb(255, 212, 59);text-shadow: 1px 1px 2px black, 0 0 25px lightblue, 0 0 5px lightyellow;"></i></h4>
+    <p style="text-align:center;">Added to spectral types.<br>Indicates size & brightness:</p>
+    <div class="details-list">
+      <ul class="luminosity">
+        <li class="detail-row">0 or Ia+: Hypergiants</li>
+        <li class="detail-row">I (Ia, Ib): Supergiants</li>
+        <li class="detail-row">II: Bright Giants</li>
+        <li class="detail-row">III: Regular Giants</li>
+        <li class="detail-row">IV: Subgiants</li>
+        <li class="detail-row">V: Main Sequence (Dwarfs)</li>
+        <li class="detail-row">VI (sd): Subdwarfs</li>
+        <li class="detail-row">D (VII): White Dwarfs</li>
+      </ul>
+    </div><br>
+
+    <div class="photogallery-button-div">
+      <a href="{% url 'photogallery' %}" class="photogallery-button" target="_blank"><span>Photo Gallery</span></a>
+    </div>
+
+    <div class="image-rightside">
+      <a href="{% static 'images/wikiimages-stars.jpg' %}" target="_blank">
+        <img class="img1" src="{% static 'images/wikiimages-stars.jpg' %}" alt="Wiki Images"></a>
+    </div>
+    <p style="color:darkorange;text-align:center;">Galaxy in Orange<br><span class="hgn">(Wiki Images)</span></p>
+
+    <div class="image-rightside">
+      <a href="{% static 'images/wolf_rayet_hen2427.jpg' %}" target="_blank">
+        <img class="img1" src="{% static 'images/wolf_rayet_hen2427.jpg' %}" alt="Wolf Rayet"></a>
+    </div>
+    <p style="color:darkorange;text-align:center;">Wolf-Rayet Star<br><span class="hgn">(NASA/ESA)</span></p>
+
+    <div class="image-rightside">
+      <a href="{% static 'images/planetary_nebula.jpg' %}" target="_blank">
+        <img class="img1" src="{% static 'images/planetary_nebula.jpg' %}" alt="Planetary Nebula"></a>
+    </div>
+    <p style="color:darkorange;text-align:center;">Planetary Nebula (PN K 4-55)<br><span class="hgn">(NASA/ESA)</span></p>
+
+  </div>
+
+  <div class="footer">
+
+    <div class="mt-4 fade-in">
+      {% if prev_star %}
+        <a href="{% url 'details' prev_star.id %}" class="btn me-2"><i class="fa-solid fa-arrow-left-long" style="color: rgb(255, 255, 255);"></i> Previous Star</a>
+      {% endif %}
+      {% if next_star %}
+        <a href="{% url 'details' next_star.id %}" class="btn">Next Star <i class="fa-solid fa-arrow-right-long" style="color: rgb(255, 255, 255);"></i></a>
+      {% endif %}
+    </div>
+
+    <div class="mt-4 fade-in">
+      <a href="{% url 'starlist' %}" class="btn me-2" ><span>Starlist</span></a>
+      <a href="{% url 'homepage' %}" class="btn"><span>Homepage</span></a>
+    </div><br><br>
+
+    <div class="image-footer">
+      <a href="{% static 'images/dimmingstar.jpg' %}" target="_blank">
+        <img class="img1" src="{% static 'images/dimmingstar.jpg' %}" alt="Dimming Star"></a>
+    </div>
+    <p style="color:darkorange;text-align:center;">VY Canis Majoris<br><span class="hgn">(NASA/ESA)</span></p><br><br>
+
+    <div class="image-footer">
+      <a href="{% static 'images/hen290.jpg' %}" target="_blank">
+        <img class="img1" src="{% static 'images/hen290.jpg' %}" alt="Hen 2-90"></a>
+    </div>
+    <p style="color:darkorange;text-align:center;">Hen 2-90<br><span class="hgn">(NASA/ESA)</span></p>
+
+  </div>
+
+</div>
+
+{% endblock %}
+
+
+
+
+
+

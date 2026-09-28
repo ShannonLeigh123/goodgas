@@ -1,0 +1,197 @@
+/* Stellar Gallery styling */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+*, *::before, *::after {
+  box-sizing: border-box !important;
+}
+
+body {
+  margin: 0;
+  font-family: "arial black", poppins, sans-serif;
+  background-image: url("/static/images/starscape.png");
+  margin-bottom: 100px;
+}
+
+
+.gallery_header {
+  text-align: center;
+  padding: 40px;
+  color:black;
+  text-shadow:
+   -1px -1px 0 white,
+    1px -1px 0 white,
+   -1px  1px 0 white,
+    1px  1px 0 white;
+  background-color:rgba(0,0,0,0.5);
+  margin-top:25px;
+  clip-path: ellipse(40% 60%);
+
+}
+
+
+/* Custom Grid Wrapper (Stops Bootstrap .container conflicts) */
+.photo-grid {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto !important;
+  padding: 10px;
+}
+
+/* Individual Grid Column (4 per row on desktop) */
+.grid-col {
+  display: flex !important;
+  flex-direction: column;
+  flex: 0 0 25%;
+  max-width: 25%;
+  padding: 15px 10px;
+}
+
+/* Photo card style & tooltip */
+.gallery-item {
+  position: relative !important; /* CRITICAL: Anchors the absolute tooltip inside this card boundary */
+  display: flex !important;
+  flex-direction: column;
+  width: 100% !important;
+  height: 100% !important;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  overflow: visible !important;  /* CRITICAL: Allows tooltips to pop outside the card bounds */
+  margin-bottom:5px;
+  box-sizing: border-box;
+  padding: 15px;
+  background-color:rgba(0,0,0,0.7);
+}
+
+/* Description Text Block */
+.desc {
+  text-align: center;
+  color:black;
+  text-shadow:none;
+  cursor:pointer;
+  flex-grow: 1 !important; /* Stretches the box vertically to match taller neighboring cards */
+  padding: 15px 10px;
+  word-wrap: break-word !important;
+  overflow-wrap: break-word !important;
+  font-size:14px;
+  margin-bottom:7px;
+  background-color:lightgray;
+}
+
+.desc:hover {
+  animation:glowPulse 3s ease-in-out infinite alternate;
+}
+
+@keyframes glowPulse {
+  from {
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #ff00ff;
+  }
+  to {
+    text-shadow: 0 0 20px #ff00ff, 0 0 40px #00ffff;
+  }
+}
+
+/* Image Uniformity Lock */
+.gallery-item img {
+  width: 100%;
+  height: 220px;         /* Forces identical height across all grid items */
+  object-fit: cover;     /* Crops cleanly without stretching/squishing */
+  display: block;
+  border:2px solid gray;
+}
+
+.tooltip-text {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute !important; /* Detaches text flow so it floats over card */
+  z-index: 9999 !important;      /* High layer depth so it sits above all imagery */
+  display: none !important;      /* Keep entirely hidden by default */
+  top: 95%; /* place below the image */
+  text-shadow:none;
+  border:2px solid grey;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 10;
+  font-family:poppins;
+  height:max-content;
+  transition: opacity 0.3s ease;
+}
+
+.image-tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+
+}
+
+.tooltip-text {
+  /* Styling */
+  background-color: rgba(0, 0, 0, 0.9) !important;
+  color: #ffffff !important;
+  text-align: center;
+  text-wrap:wrap;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  line-height: 1.4;
+  margin-bottom:10px;
+  font-family:arial;
+
+  /* Sizing Context & Position Controls */
+  width: 200px !important;       /* Hard lock width stops long strings from collapsing text vertically */
+  left: 50% !important;          /* Horizontal center base point */
+  transform: translateX(-50%) !important; /* Perfect align center offset shift */
+  bottom: 110% !important;       /* Positions the bubble hovering directly above the photo */
+
+  /* Safety Wrappers */
+  word-wrap: break-word !important;
+  overflow-wrap: break-word !important;
+}
+
+.image-tooltip {
+  position: relative;
+  display: inline-block;
+  margin-bottom:10px;
+}
+
+
+.image-tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Activates the display cleanly on hover states */
+.gallery-item:hover .tooltip-text {
+  display: block !important;
+}
+
+/* Responsive Breakpoints (MOBILE AND TABLET REFINEMENTS) */
+
+@media screen and (max-width: 900px) {
+  .grid-col {
+    flex: 0 0 50% !important;    /* 2 columns on tablets */
+    max-width: 50% !important;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .grid-col {
+    flex: 0 0 100% !important;   /* 1 full-width column stacked on phones */
+    max-width: 100% !important;
+    padding: 5px     /* Clean side margins spacing items from screen edge */
+    min-width: 290px !important;
+    box-sizing: border-box;
+  }
+  .tooltip-text {
+    width: 85% !important;       /* On mobile, let tooltip safely span across the card area width */
+    bottom: 102% !important;
+  }
+}
+
+
