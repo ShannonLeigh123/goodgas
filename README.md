@@ -52,8 +52,6 @@ Open your browser and visit: GoodnessGaseous
 - Learn about the stars....
 
 ## Future Improvements
-- Add search functionality
-- Add user accounts
-- Add image uploads for star entries
+- Add more image uploads for star entries
 - Expand database with more cosmic objects
 
