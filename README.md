@@ -39,10 +39,9 @@ A mini stellar encyclopedia built with Django. This project catalogs star types 
    python manage.py runserver
 
 ## Usage
-Open your browser and visit:
-http://127.0.0.1:8000/
-
-Browse stellar entries, add new ones, or explore categories.
+Open your browser and visit: GoodnessGaseous
+(https://goodgas.onrender.com)
+- Learn about the stars....
 
 ## Future Improvements
 - Add search functionality
