@@ -1,5 +1,7 @@
+<p align="center">
+  <img width="400" alt="starlist_screenshot" src="https://github.com/user-attachments/assets/20e9a7d5-3345-4b7c-bc41-aa72ffd1cb17" />
+</p>
 # GoodnessGaseous
-
 A mini stellar encyclopedia built with Django. This project catalogs star types with detailed descriptions and SQL-backed data.
 
 ## Features
