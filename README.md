@@ -17,7 +17,7 @@ Explore the stars live here: **[GoodnessGaseous Web App](https://goodgas.onrende
 
 ## ✨ Features
 * **Interactive Catalog:** Explore comprehensive classifications of various star types and life stages.
-* **Deep Astronomical Data:** Detailed breakdowns of spectral classifications, solar mass definitions (\(M_\odot\)), temperatures, and compositions.
+* **Deep Astronomical Data:** Detailed breakdowns of spectral classifications, solar mass definitions , temperatures, and compositions.
 * **Robust Backend:** Data-driven architecture powered by relational SQL storage.
 * **Immersive Theme:** High-fidelity, cosmic-themed user interface tailored for space enthusiasts.
 
