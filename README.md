@@ -1,6 +1,17 @@
+<div align="center">
+
+| Star List Preview | Details View |
+| :---: | :---: |
+| <img src="https://github.com/user-attachments/assets/20e9a7d5-3345-4b7c-bc41-aa72ffd1cb17" width="380"> | <img src="https://github.com/user-attachments/assets/57276b5e-dbd8-4088-b6ca-8b628ed28cfe" width="380"> |
+
+</div>
+
 <p align="center">
   <img width="400" alt="starlist_screenshot" src="https://github.com/user-attachments/assets/20e9a7d5-3345-4b7c-bc41-aa72ffd1cb17" />
 </p>
+
+<img width="1600" height="900" alt="detailsscreenshot" src="https://github.com/user-attachments/assets/57276b5e-dbd8-4088-b6ca-8b628ed28cfe" />
+
 
 # GoodnessGaseous
 - A mini stellar encyclopedia built with Django. 
