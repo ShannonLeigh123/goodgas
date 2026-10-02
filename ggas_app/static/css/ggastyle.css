@@ -428,19 +428,6 @@ body.star_search_results {
   color: white;
 }
 
-.button-row {
-  display: flex;
-  justify-content: center;
-  gap: 20px; /* space between buttons */
-}
-
-.button-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-
 .tooltip1 {
   position: relative;
   display: inline-block;
