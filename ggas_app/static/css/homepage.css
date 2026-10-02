@@ -43,63 +43,47 @@ body.homepage {
 .thestars-wrapper {
   display: flex;
   justify-content: center;
+  align-items:center;
+  margin-bottom:10px;
 }
 
-/* Shared base button behavior */
-.button-base {
+.thestars {
   display: inline-block;
-  margin: 10px 0;
   border-radius: 12px;
   background-color: white;
-  border: 2px solid grey; /* stable border */
+  border: 2px solid grey;
   color: black;
   text-align: center;
+  padding: 10px;
   width: 200px;
   cursor: pointer;
   font-size: 1rem;
   transition: all 0.3s ease;
-  will-change: transform; /* Chromebook stability */
-  height: 50px;           /* prevents layout jump */
-  line-height: 30px;      /* vertical alignment */
   max-width: 100%;
   white-space: normal;
 }
 
-/* Active state */
-.button-base:active {
+.thestars:active {
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
 
-/* Hover state */
-.button-base:hover {
-  box-shadow: 0 5px grey;
-  transform: translateY(4px);
-  background-color: rgba(0,0,0,0.6);
-  color: white;
-  border-color: white;
-}
-
-/* Span behavior */
-.button-base span {
-  display: inline-flex; /* prevents wiggle on Chromebook */
-  align-items: center;
+.thestars span {
+  display: inline-block;
   position: relative;
   transition: 0.5s;
 }
 
-/* Hover padding */
-.button-base:hover span {
-  padding-right: 25px;
-}
-
-/* Unique arrow for To the Stars */
 .thestars span:after {
-  content: '\00bb'; /* » */
+  content: '\00bb';
   position: absolute;
   opacity: 0;
   right: -20px;
   transition: 0.5s;
+}
+
+.thestars:hover span {
+  padding-right: 25px;
 }
 
 .thestars:hover span:after {
@@ -107,7 +91,10 @@ body.homepage {
   right: 0;
 }
 
-/* Unique padding */
-.thestars {
-  padding: 10px;
+.thestars:hover {
+  box-shadow: 0 5px grey;
+  transform: translateY(4px);
+  background-color:rgba(0,0,0,0.6);
+  color:white;
 }
+
