@@ -134,9 +134,16 @@
          {% endfor %}
        </ul><br><br>
 
-     <a href="{% url 'homepage' %}" class="button-base homebutton"><span>Homepage</span></a>
-     <a href="{% url 'photogallery' %}" class="button-base photogallery-button" target="_blank"><span>Photo Gallery</span></a>
-     <br><br>
+       <div class="button-row">
+         <div class="button-wrapper">
+           <a href="{% url 'homepage' %}" class="homebutton"><span>Homepage</span></a>
+         </div>
+
+        <div class="button-wrapper">
+          <a href="{% url 'photogallery' %}" class="photogallery-button" target="_blank"><span>Photo Gallery</span></a>
+        </div>
+      </div>
+      <br><br>
 
   </div>  <!-- end wrapper -->
 

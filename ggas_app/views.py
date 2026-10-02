@@ -40,45 +40,6 @@ def photogallery(request):
 def home(request):
     return HttpResponse("Greetings from Gaseous Goodness!")
 
-def tooltips(request):
-    template = loader.get_template('tooltips.html')
-    return HttpResponse(template.render())
-
-def buttonstyles(request):
-    template = loader.get_template('buttonstyles.html')
-    return HttpResponse(template.render())
-
-def gridcontainer(request):
-    template = loader.get_template('gridcontainer.html')
-    return HttpResponse(template.render())
-
-
-def responsivewebdesign(request):
-    template = loader.get_template('responsivewebdesign.html')
-    return HttpResponse(template.render())
-
-
-
-def star_search_view(request):
-    query = request.GET.get('q', '').strip()
-
-    if query:
-        # Look for stars that contain the text (case-insensitive)
-        results = StellarGenres.objects.filter(name__icontains=query)
-
-        # Smart Shortcut: If exactly ONE star matches, skip the results list
-        # and take them directly to that star's details page!
-        if results.count() == 1:
-            exact_match = results.first()
-            return redirect('details', id=exact_match.id)  # Adjust 'pk' or 'slug' to match your routing
-
-        # If multiple stars match, send them to a results page
-        return render(request, 'star_search_results.html', {'results': results, 'query': query})
-
-    # If the search field was empty, just send them back to the main list
-    return redirect('starlist')
-
-
 def star_search_view(request):
     query = request.GET.get('q', '').strip()
 
