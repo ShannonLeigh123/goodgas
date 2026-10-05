@@ -457,7 +457,8 @@ body.star_search_results {
   z-index: 1;
   top: -5px;
   left: 105%;
-  font-family: arial, sans-serif;
+  font-family: "Times New Roman", Times, sans-serif;
+  font-weight: 700;
 }
 
 .tooltip1:hover  .tooltip1text1 {
@@ -497,7 +498,8 @@ body.star_search_results {
   z-index: 1;
   top: -5px;
   right: 110%;
-  font-family: poppins,sans-serif;
+  font-family: "Times New Roman",sans-serif;
+  font-weight: 700;
 
 }
 
