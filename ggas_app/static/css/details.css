@@ -30,8 +30,8 @@ body.detailspage {
 /* Header Styling */
 .adastra {
   grid-area: adastra;
-  color:black;
-  text-align:center;
+  color: black;
+  text-align: center;
   text-shadow: 1px 1px 2px white, 0 0 25px lightblue, 0 0 5px lightpink;
 }
 
@@ -45,6 +45,13 @@ body.detailspage {
     'left details details right'
     'left footer footer right';
 }
+/* Must have this if I want to re-order */
+.adastra { grid-area: adastra; }
+.left    { grid-area: left; }
+.details { grid-area: details; }
+.right   { grid-area: right; }
+.footer  { grid-area: footer; }
+
 
 /*  Responsive Mobile Layout */
 @media (max-width: 992px) {
@@ -54,15 +61,15 @@ body.detailspage {
     gap: 20px;
     grid-template-areas:
       'adastra'
-      'left'
       'details'
-      'right'
-      'footer';
+      'footer'
+      'left'
+      'right';
   }
   .m-notation,
   .luminosity {
     width: 100%;
-    max-width: 450px; /* adjust to taste */
+    max-width: 70%; /* adjust to taste */
     margin: 0 auto;
     text-align: left;
   }
@@ -100,23 +107,20 @@ body.detailspage {
   outline: 1px solid darkorange;
   padding: 10px;
   position: relative;
-  font-family: arial;
-  font-weight: bold;
+  font-family: "times new roman", arial;
+  font-weight: 700;
   height: max-content;
 
 }
 
-.left h4, .right p {
+.left h4, .right p, #not1, #not3, .luminosity {
   color: #f6770c;
 }
 
-.left p {
+.left p, #not2, #not4, .lum {
   color: rgb(255, 212, 59);
 }
 
-.m-notation, .luminosity {
-  list-style-type: square;
-}
 
 /* Star Links Dropdown container */
 
@@ -387,7 +391,8 @@ body.detailspage {
 .right {
   grid-area: right;
   background-color: rgba(0, 0, 0, 0.7);
-  font-family:roboto,sans-serif,arial;
+  font-family: "times new roman", arial;
+  font-weight: 700;
   border-radius: 20px;
   color:#f2f7f3;
   border:2px solid darkred;
@@ -400,6 +405,7 @@ body.detailspage {
   color: rgb(255, 212, 59);
   text-shadow: 1px 1px 2px black, 0 0 25px lightblue, 0 0 5px lightyellow;
 }
+
   /* Div for photo gallery button */
 .photogallery-button-div {
   display:flex;
@@ -468,7 +474,7 @@ body.detailspage {
   border-radius: 20px;
   border: 2px solid darkred;
   outline: 1px solid darkorange;
-  max-width: 675px;
+  max-width: 700px;
   margin-left: auto;
   margin-right: auto;
   width: 100%;
