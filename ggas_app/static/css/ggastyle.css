@@ -21,15 +21,45 @@ box-sizing: border-box;
 /* separate page backgrounds */
 
 body.starlist {
-  background: url("../images/starslist1.png") no-repeat center center fixed;
-  background-size: cover;
+  background-color: #1616e9; /* Fallback cosmic blue */
+  background-image: url("../images/starslist1.png");
   padding: 10px;
 }
 
 body.star_search_results {
-  background: url("../images/starscape.png") no-repeat center center fixed;
-  background-size: cover;
+  background-color: #1616e9; /* Fallback cosmic blue */
+  background-image: url("../images/starscape.png");
 }
+
+body.starlist, body.star_search_results {
+  font-family: "Arial Black", inter, sans-serfif;
+  font-size: 1rem;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Keep it on for desktops and laptops */
+  color: white;
+  margin: 0;
+  /* Fallback + Modern mobile height fix */
+  min-height: 100vh;
+  min-height: 100dvh;
+  margin: 0;
+}
+
+/* ==========================================================================
+   MOBILE-ONLY BACKGROUND FIX (Targets screens smaller than a tablet)
+   ========================================================================== */
+
+@media (max-width: 767.98px) {
+  body {
+    /* 1. Turns off the buggy fixed behavior on mobile phones */
+    background-attachment: scroll !important;
+
+    /* 2. Forces the background to span the body size */
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
+
 
 
 /* starlist page */

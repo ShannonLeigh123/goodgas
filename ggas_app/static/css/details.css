@@ -8,17 +8,39 @@
   }
 }
 
-body.detailspage {
+body {
   font-family: inter, sans-serif, poppins;
   font-size: 1rem;
   font-weight: 700;
-  background-color: darkred;
+  background-color: darkred; /* Fallback cosmic red */
+  background: url("../images/detailspage.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Keep it on for desktops and laptops */
   color: white;
   margin: 0;
   padding: 6px;
-  background: url("../images/detailspage.png") no-repeat center center fixed;
-  background-size: cover;
+  /* Fallback + Modern mobile height fix */
+  min-height: 100vh;
+  min-height: 100dvh;
+  margin: 0;
 }
+
+/* ==========================================================================
+   MOBILE-ONLY BACKGROUND FIX (Targets screens smaller than a tablet)
+   ========================================================================== */
+
+@media (max-width: 767.98px) {
+  body {
+    /* 1. Turns off the buggy fixed behavior on mobile phones */
+    background-attachment: scroll !important;
+
+    /* 2. Forces the background to span the body size */
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
+
 
 *, *::before, *::after {
   box-sizing: border-box !important;
@@ -34,7 +56,8 @@ body.detailspage {
   color: black;
   text-align: center;
   text-shadow: 1px 1px 2px white, 0 0 25px lightblue, 0 0 5px lightpink;
-  font-family: "arial black";
+  font-family: "arial black", "times new roman", sans-serif;
+  font-weight: 900;
 }
 
 /*  Desktop Base Layout */

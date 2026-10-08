@@ -1,11 +1,35 @@
 body {
-  font-family: "Arial Black", poppins, sans-serfif;
+  font-family: "Arial Black", inter, sans-serfif;
   font-size: 1rem;
   background-color: #1616e9; /* Fallback cosmic blue */
+  background-image: url("../images/homepage.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Keep it on for desktops and laptops */
   color: white;
   margin: 0;
   padding: 20px;
+  /* Fallback + Modern mobile height fix */
+  min-height: 100vh;
+  min-height: 100dvh;
+  margin: 0;
 }
+
+/* ==========================================================================
+   MOBILE-ONLY BACKGROUND FIX (Targets screens smaller than a tablet)
+   ========================================================================== */
+
+@media (max-width: 767.98px) {
+  body {
+    /* 1. Turns off the buggy fixed behavior on mobile phones */
+    background-attachment: scroll !important;
+
+    /* 2. Forces the background to span the body size */
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
+
 
 * {
 box-sizing: border-box;
@@ -16,11 +40,6 @@ box-sizing: border-box;
     animation: none !important;
     transition: none !important;
   }
-}
-
-body.homepage {
-  background: url("../images/homepage.png") no-repeat center center fixed;
-  background-size: cover;
 }
 
 .homepage-container {
@@ -94,7 +113,7 @@ body.homepage {
 .thestars:hover {
   box-shadow: 0 5px grey;
   transform: translateY(4px);
-  background-color:rgba(0,0,0,0.6);
-  color:white;
+  background-color: rgba(0,0,0,0.6);
+  color: white !important;
 }
 
