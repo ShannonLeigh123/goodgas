@@ -1,5 +1,5 @@
 body {
-  font-family: "Arial Black", poppins, sans-serfif;
+  font-family: "open sans", roboto, sans-serfif;
   font-size: 1rem;
   background-color: #1616e9; /* Fallback cosmic blue */
   color: white;
@@ -86,10 +86,12 @@ body.star_search_results {
   .button { grid-area: button; }
 }
 
+/* All Things Stellar, starlist.html */
 .header {
   grid-area: header;
   text-align: center;
   color: black;
+  font-family: "arial black";
   margin-top:30px;
   border-radius: 20px;
   text-shadow:
@@ -457,7 +459,7 @@ body.star_search_results {
   z-index: 1;
   top: -5px;
   left: 105%;
-  font-family: "Times New Roman", Times, sans-serif;
+  font-family: inter, "Times New Roman", sans-serif;
   font-weight: 700;
 }
 
@@ -498,7 +500,7 @@ body.star_search_results {
   z-index: 1;
   top: -5px;
   right: 110%;
-  font-family: "Times New Roman",sans-serif;
+  font-family: inter, "Times New Roman", sans-serif;
   font-weight: 700;
 
 }
@@ -548,6 +550,7 @@ body.star_search_results {
      -1px  1px 0 white,
       1px  1px 0 white;
   text-align:center;
+  font-family: "arial black";
 }
 
 .matching-star {

@@ -9,8 +9,9 @@
 }
 
 body.detailspage {
-  font-family:"arial black", sans-serif, poppins;
+  font-family: inter, sans-serif, poppins;
   font-size: 1rem;
+  font-weight: 700;
   background-color: darkred;
   color: white;
   margin: 0;
@@ -33,6 +34,7 @@ body.detailspage {
   color: black;
   text-align: center;
   text-shadow: 1px 1px 2px white, 0 0 25px lightblue, 0 0 5px lightpink;
+  font-family: "arial black";
 }
 
 /*  Desktop Base Layout */
@@ -285,12 +287,7 @@ body.detailspage {
 
 /* Text Effects  */
 .details p span {
-  color: #330000;
-  text-shadow:
-    -1px -1px 0 white,
-     1px -1px 0 white,
-    -1px  1px 0 white,
-     1px  1px 0 white;
+  color: #FFFFE0;
   transition: transform 0.2s ease, color 0.2s ease;
 }
 
